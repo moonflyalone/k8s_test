@@ -1,0 +1,15 @@
+kind: Ingress
+apiVersion: v1
+metadata:
+  annotations:
+    ingress.kubernetes.io
+  name: webapp
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: tomcat
+            servicePort: 8080
